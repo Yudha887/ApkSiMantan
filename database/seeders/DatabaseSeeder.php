@@ -45,5 +45,13 @@ class DatabaseSeeder extends Seeder
             "role_id" => 2,
             "created_by" => 1
         ]);
+
+        $this->call([
+            FlagSeeder::class,
+            PostSeeder::class,
+            SavePostSeeder::class,
+            LikeSeeder::class,
+            CommentSeeder::class
+        ]);
     }
 }

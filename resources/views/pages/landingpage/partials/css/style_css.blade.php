@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="{{ url('/landing-page') }}/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ url('/landing-page') }}/css/animate.min.css">
+<link rel="stylesheet" href="{{ url('/landing-page') }}/css/magnific-popup.css">
+<link rel="stylesheet" href="{{ url('/landing-page') }}/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="{{ url('/landing-page') }}/font-flaticon/flaticon.css">
+<link rel="stylesheet" href="{{ url('/landing-page') }}/css/dripicons.css">
+<link rel="stylesheet" href="{{ url('/landing-page') }}/css/slick.css">
+<link rel="stylesheet" href="{{ url('/landing-page') }}/css/default.css">
+<link rel="stylesheet" href="{{ url('/landing-page') }}/css/style.css">
+<link rel="stylesheet" href="{{ url('/landing-page') }}/css/responsive.css">

@@ -17,6 +17,38 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item">
+                <a href="{{ url('/admin/tagar') }}">
+                    <span class="icon-holder">
+                        <i class="anticon anticon-dashboard"></i>
+                    </span>
+                    <span class="title">Tagar</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ url('/admin/postingan') }}">
+                    <span class="icon-holder">
+                        <i class="anticon anticon-dashboard"></i>
+                    </span>
+                    <span class="title">Postingan</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ url('/admin/suka') }}">
+                    <span class="icon-holder">
+                        <i class="anticon anticon-dashboard"></i>
+                    </span>
+                    <span class="title">Menyukai Postingan</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ url('/admin/komentar') }}">
+                    <span class="icon-holder">
+                        <i class="anticon anticon-dashboard"></i>
+                    </span>
+                    <span class="title">Komentar</span>
+                </a>
+            </li>
             <li class="nav-item dropdown">
                 <a class="dropdown-toggle" href="javascript:void(0);">
                     <span class="icon-holder">
