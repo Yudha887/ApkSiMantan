@@ -29,7 +29,7 @@
 
     <div class="card">
         <div class="card-body">
-            <table id="data-table" class="table">
+            <table id="data-table" class="table table-bordered">
                 <thead>
                     <tr>
                         <th class="text-center">No.</th>

@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\AutentikasiController;
 use App\Http\Controllers\KomentarController;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PostinganController;
@@ -21,9 +22,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get("/", function() {
-    return view("pages.landingpage.main");
-});
+Route::get("/", [LandingPageController::class, "home"]);
 
 Route::group(["middleware" => ["guest"]], function() {
     Route::prefix("login")->group(function() {

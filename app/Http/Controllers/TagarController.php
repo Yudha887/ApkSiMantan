@@ -24,6 +24,12 @@ class TagarController extends Controller
             "name" => "required"
         ], $messages);
 
+        $cek = Flag::where("name", $request->name)->count();
+
+        if ($cek > 0) {
+            return back()->with("error", "Tidak Boleh Duplikasi Data")->withInput();
+        }
+
         Flag::create($request->all());
 
         return back()->with("message", "Data Berhasil di Tambahkan");
@@ -38,6 +44,12 @@ class TagarController extends Controller
         $this->validate($request, [
             "name" => "required"
         ], $messages);
+
+        $cek = Flag::where("name", $request->name)->count();
+
+        if ($cek > 0) {
+            return back()->with("error", "Tidak Boleh Duplikasi Data")->withInput();
+        }
 
         Flag::where("id", $id)->update([
             "name" => $request["name"]

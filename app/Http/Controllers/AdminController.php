@@ -17,6 +17,24 @@ class AdminController extends Controller
 
     public function store(Request $request)
     {
+        $messages = [
+            "required" => "Kolom :attribute Harus Diisi",
+            "unique" => "Email Tersebut Sudah Digunakan",
+            "numeric" => "Kolom :attribute Harus Angka"
+        ];
+
+        $this->validate($request, [
+            "name" => "required",
+            "email" => "required|unique:users",
+            "nip" => "required|numeric"
+        ], $messages);
+
+        $cek = User::where("nip", $request->nip)->count();
+
+        if ($cek > 0) {
+            return back()->with("error", "NIP Sudah Digunakan");
+        }
+
         User::create([
             "name" => $request->name,
             "email" => $request->email,
@@ -27,24 +45,36 @@ class AdminController extends Controller
             "created_by" => Auth::user()->id
         ]);
 
-        return back();
+        return back()->with("message", "Data Berhasil di Tambahkan");
     }
 
     public function update(Request $request, $id)
     {
+        $messages = [
+            "required" => "Kolom :attribute Harus Diisi",
+            "unique" => "Email Tersebut Sudah Digunakan",
+            "numeric" => "Kolom :attribute Harus Angka"
+        ];
+
+        $this->validate($request, [
+            "name" => "required",
+            "nip" => "required|numeric"
+        ], $messages);
+
+        $cek = User::where("nip", $request->nip)->count();
+
         User::where("id", $id)->update([
             "name" => $request->name,
-            "email" => $request->email,
             "nip" => $request->nip
         ]);
 
-        return back();
+        return back()->with("message", "Data Berhasil di Simpan");
     }
 
     public function destroy($id)
     {
         User::where("id", $id)->delete();
 
-        return back();
+        return back()->with("message", "Data Berhasil di Hapus");
     }
 }

@@ -6,7 +6,7 @@
                     <div class="col-xl-2 col-lg-2">
                         <div class="logo">
                             <a href="index.html">
-                                <img src="{{ url('/landing-page') }}/img/logo/logo.png" alt="logo">
+                                <img src="{{ url('/images/logo-bps.png') }}" alt="logo" style="width: 70px">
                             </a>
                         </div>
                     </div>
@@ -16,40 +16,9 @@
                         </div>
                         <div class="main-menu text-right text-xl-right">
                             <nav id="mobile-menu">
-                                <ul>
-                                    <li class="has-sub">
-                                        <a href="index.html">Home</a>
-                                        <ul>
-                                            <li>
-                                                <a href="index.html">
-                                                    Home Page 01
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="index-2.html">
-                                                    Home Page 02
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="index-3.html">
-                                                    Home Page 03
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="about.html">About Us</a>
-                                    </li>
-                                    
-                                    <li class="has-sub">
-                                        <a href="blog.html">Blog</a>
-                                        <ul>
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
+                                <marquee behavior="" direction="">
+                                    Selamat Datang di Aplikasi Si Mantan. Berikut Adalah Beberapa Data Kinerja Dari Pegawai BPS Indramayu
+                                </marquee>
                             </nav>
                         </div>
                     </div>
@@ -62,8 +31,8 @@
                                         alt="top-m-icon.png">
                                     </div>
                                     <div class="text">
-                                        <span>Call Now !</span>
-                                        <strong>+91 854 789-8746</strong>
+                                        <span>Hubungi Sekarang !</span>
+                                        <strong>+62 821-1621-4889</strong>
                                     </div>
                                 </li>
                             </ul>

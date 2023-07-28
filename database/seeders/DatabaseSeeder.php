@@ -28,10 +28,10 @@ class DatabaseSeeder extends Seeder
         }
 
         User::create([
-            "name" => "Yudha Pratama",
+            "name" => "Yudha Airlangga",
             "nip" => "11111",
             "email" => "yudha@gmail.com",
-            "password" => bcrypt("admin"),
+            "password" => bcrypt("admin123"),
             "active" => 1,
             "role_id" => 1
         ]);

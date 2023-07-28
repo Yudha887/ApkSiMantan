@@ -19,6 +19,15 @@
                 <div class="container d-flex h-100">
                     <div class="row align-items-center w-100">
                         <div class="col-md-7 col-lg-5 m-h-auto">
+                            @if (session("message"))
+                            <div class="alert alert-danger" style="background-color: red;">
+                                <span class="text-white">
+                                    <center>
+                                        {!! session("message") !!}
+                                    </center>
+                                </span>
+                            </div>
+                            @endif
                             <div class="card shadow-lg">
                                 <div class="card-body">
                                     <div class="align-items-center justify-content-between m-b-30">
@@ -32,16 +41,25 @@
                                             <label class="font-weight-semibold" for="email">E - Mail:</label>
                                             <div class="input-affix">
                                                 <i class="prefix-icon anticon anticon-user"></i>
-                                                <input type="text" class="form-control" id="email" name="email" placeholder="Masukkan E - Mail">
+                                                <input type="text" class="form-control @error("email") {{ 'is-invalid' }} @enderror" id="email" name="email" placeholder="Masukkan E - Mail" value="{{ old('email') }}">
                                             </div>
+                                            @error("email")
+                                            <span class="text-danger">
+                                                {{ $message }}
+                                            </span>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
-                                            <label class="font-weight-semibold" for="password">Password:</label>
-                                            <a class="float-right font-size-13 text-muted" href="">Forget Password?</a>
+                                            <label class="font-weight-semibold" for="password">Password</label>
                                             <div class="input-affix m-b-10">
                                                 <i class="prefix-icon anticon anticon-lock"></i>
-                                                <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan Password">
+                                                <input type="password" class="form-control @error("password") {{ 'is-invalid' }} @enderror" id="password" name="password" placeholder="Masukkan Password">
                                             </div>
+                                            @error("password")
+                                                <span class="text-danger">
+                                                    {{ $message }}
+                                                </span>
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <div class="d-flex align-items-center justify-content-between">

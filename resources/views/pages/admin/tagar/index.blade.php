@@ -43,6 +43,22 @@
     </div>
     @endif
 
+    @if (session("error"))
+    <div class="alert alert-danger">
+        <div class="d-flex justify-content-start">
+            <span class="alert-icon m-r-20 font-size-30">
+                <i class="anticon anticon-info-circle"></i>
+            </span>
+            <div>
+                <h5 class="alert-heading">Gagal</h5>
+                <p>
+                    {!! session("error") !!}
+                </p>
+            </div>
+        </div>
+    </div>
+    @endif
+
     <div class="card">
         <div class="card-header pt-2">
             <button type="button" class="btn btn-primary btn-sm float-right" data-toggle="modal"
@@ -51,11 +67,11 @@
             </button>
         </div>
         <div class="card-body">
-            <table id="data-table" class="table">
+            <table id="data-table" class="table table-bordered">
                 <thead>
                     <tr>
                         <th class="text-center">No.</th>
-                        <th class="text-center">Tagar</th
+                        <th class="text-center">Tagar</th>
                         <th class="text-center">Aksi</th>
                     </tr>
                 </thead>
