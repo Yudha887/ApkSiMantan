@@ -33,6 +33,10 @@ use Carbon\Carbon;
 
 <div class="card">
     <div class="card-body">
+        <a target="_blank" href="{{ url('/admin/postingan/download_all') }}" class="btn btn-danger btn-sm">
+            Download Semua Data
+        </a>
+        <br><br>
         <table id="data-table" class="table table-bordered">
             <thead>
                 <tr>

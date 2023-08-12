@@ -35,6 +35,13 @@
     </button>
 </div>
 <div class="card-body">
+
+    <a target="_blank" href="{{ url('/admin/akun/pegawai/download_all') }}" class="btn btn-danger btn-sm">
+        Download Semua Data
+    </a>
+
+    <br><br>
+
     <table id="data-table" class="table table-bordered">
         <thead>
             <tr>

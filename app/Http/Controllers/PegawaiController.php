@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use PDF;
 
 class PegawaiController extends Controller
 {
@@ -65,6 +66,21 @@ class PegawaiController extends Controller
         ]);
 
         return back()->with("message", "Data Berhasil di Simpan");
+    }
+
+    public function show()
+    {
+        try {
+
+            $pegawai = User::where("role_id", 2)->get();
+
+            $pdf = PDF::loadView("pages.admin.akun.pegawai.download_all", ["pegawai" => $pegawai])->setPaper("a3");
+
+            return $pdf->download("Laporan_Data_Pegawai.pdf");
+
+        } catch (\Exception $e) {
+            dd($e);
+        }
     }
 
     public function destroy($id)

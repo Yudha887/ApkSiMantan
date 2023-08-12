@@ -36,11 +36,14 @@ Route::group(["middleware" => ["is_admin"]], function() {
         Route::get("/dashboard", [AppController::class, "dashboard_admin"]);
 
         Route::resource("tagar", TagarController::class);
+        Route::get("/postingan/download_all", [PostinganController::class, "show"]);
         Route::resource('postingan', PostinganController::class);
         Route::resource("suka", LikeController::class);
         Route::resource("komentar", KomentarController::class);
         Route::prefix("akun")->group(function() {
             Route::get("/profil", [ProfilController::class, "profil_saya"]);
+            Route::put("/profil", [ProfilController::class, "update_profil"]);
+            Route::get("/pegawai/download_all", [PegawaiController::class, "show"]);
             Route::resource("/pegawai", PegawaiController::class);
             Route::resource("/admin", AdminController::class);
         });
